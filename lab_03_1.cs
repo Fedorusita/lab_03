@@ -4,14 +4,32 @@ namespace lab_03_1
 {
     public struct Vector
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int Z { get; set; }
-        public Vector(int x, int y, int z)
+        private int x;
+        private int y;
+        private int z;
+        public Vector(int x = 0, int y = 0, int z = 0)
         {
-            X = x;
-            Y = y;
-            Z = z;
+            this.x = x;
+            this.y = y;
+            this.z = z;
+        }
+
+        public int X
+        {
+            get { return x; }
+            set { x =  value; }
+        }
+
+        public int Y
+        {
+            get { return y; }
+            set { y = value; }
+        }
+
+        public int Z
+        {
+            get { return z; }
+            set { z = value; }
         }
         public static Vector operator +(Vector v1, Vector v2)
         {
@@ -43,18 +61,13 @@ namespace lab_03_1
         {
             return !(v1 == v2);
         }
-        //public static Vector operator *(Vector v1, Vector v2)
-        // {
-        //     int Proizv = v1.X*v2.X + v1.Y*v2.Y + v1.Z*v2.Z;
-        //     return new Proizv();
-
-        // }
+       
     }
 
 
     struct lab_03_1
     {
-        // Сложение двух векторов
+        
         public static void Main(string[] args)
         {
             Vector v1 = new Vector(3, 5, 10);
